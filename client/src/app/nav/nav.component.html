@@ -24,10 +24,11 @@
             
         </ul>
 
-        <div *ngIf="loggedIn" class="dropdown">
-            <a class="dropdown-toggle text-light">Welcome User</a>
-            <div class="dropdown-menu">
+        <div *ngIf="loggedIn" class="dropdown" dropdown>
+            <a class="dropdown-toggle text-light" dropdownToggle>Welcome User</a>
+            <div class="dropdown-menu mt-3" *dropdownMenu>
                 <a class="dropdown-item">Edit Profile</a>
+                <div class="dropdown-divider"></div>
                 <a class="dropdown-item" (click)="logout()">Logout</a>
             </div>
         </div>
