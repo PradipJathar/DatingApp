@@ -1,5 +1,6 @@
 ﻿using API.Data;
 using API.Entities;
+using API.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,22 +11,22 @@ namespace API.Controllers
     [Authorize]
     public class UsersController : BaseApiController
     {
-        private readonly DataContext db;
-        public UsersController(DataContext dataContext)
+        private readonly IUserRepository _userRepo;
+        public UsersController(IUserRepository useRepo)
         {
-            db = dataContext;
+            _userRepo = useRepo;
         }
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
         {
-            return await db.Users.ToListAsync();
+            return Ok(await _userRepo.GetUsersAsync());
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<AppUser>> GetUser(int id)
+        [HttpGet("{username}")]
+        public async Task<ActionResult<AppUser>> GetUser(string username)
         {
-            return await db.Users.FindAsync(id);
+            return await _userRepo.GetUserByUsernameAsync(username);
         }
     }
 }
