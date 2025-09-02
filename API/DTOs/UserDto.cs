@@ -5,7 +5,7 @@ namespace API.DTOs
     public class UserDto
     {
         [Required]
-        public string UserName { get; set; }
+        public string Username { get; set; }
 
         [Required]
         [StringLength(8, MinimumLength = 4)]

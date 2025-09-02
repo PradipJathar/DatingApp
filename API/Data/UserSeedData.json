@@ -1,6 +1,6 @@
 [
   {
-    "UserName": "Shweta",
+    "Username": "Shweta",
     "Gender": "female",
     "DateOfBirth": "1953-02-13",
     "KnownAs": "Shweta",
@@ -19,7 +19,7 @@
     ]
   },
   {
-    "UserName": "Nirmala",
+    "Username": "Nirmala",
     "Gender": "female",
     "DateOfBirth": "1955-09-11",
     "KnownAs": "Nirmala",
@@ -38,7 +38,7 @@
     ]
   },
   {
-    "UserName": "Swati",
+    "Username": "Swati",
     "Gender": "female",
     "DateOfBirth": "1993-05-13",
     "KnownAs": "Swati",
@@ -57,7 +57,7 @@
     ]
   },
   {
-    "UserName": "Ravina",
+    "Username": "Ravina",
     "Gender": "female",
     "DateOfBirth": "1965-06-30",
     "KnownAs": "Ravina",
@@ -76,7 +76,7 @@
     ]
   },
   {
-    "UserName": "Siddhi",
+    "Username": "Siddhi",
     "Gender": "female",
     "DateOfBirth": "1964-10-04",
     "KnownAs": "Siddhi",
@@ -96,7 +96,7 @@
   },
 
   {
-    "UserName": "Pradip",
+    "Username": "Pradip",
     "Gender": "male",
     "DateOfBirth": "1966-06-01",
     "KnownAs": "Pradip",
@@ -115,7 +115,7 @@
     ]
   },
   {
-    "UserName": "Pravin",
+    "Username": "Pravin",
     "Gender": "male",
     "DateOfBirth": "1952-10-13",
     "KnownAs": "Pravin",
@@ -134,7 +134,7 @@
     ]
   },
   {
-    "UserName": "Hrutvik",
+    "Username": "Hrutvik",
     "Gender": "male",
     "DateOfBirth": "1983-03-17",
     "KnownAs": "Hrutvik",
@@ -153,7 +153,7 @@
     ]
   },
   {
-    "UserName": "Somnath",
+    "Username": "Somnath",
     "Gender": "male",
     "DateOfBirth": "1994-10-31",
     "KnownAs": "Somnath",
@@ -172,7 +172,7 @@
     ]
   },
   {
-    "UserName": "Rushi",
+    "Username": "Rushi",
     "Gender": "male",
     "DateOfBirth": "1984-08-04",
     "KnownAs": "Rushi",
@@ -191,7 +191,7 @@
     ]
   },
   {
-    "UserName": "Somesh",
+    "Username": "Somesh",
     "Gender": "male",
     "DateOfBirth": "1975-12-24",
     "KnownAs": "Somesh",
@@ -210,7 +210,7 @@
     ]
   },
   {
-    "UserName": "Sandeep",
+    "Username": "Sandeep",
     "Gender": "male",
     "DateOfBirth": "1974-03-01",
     "KnownAs": "Sandeep",
@@ -229,7 +229,7 @@
     ]
   },
   {
-    "UserName": "Aashu",
+    "Username": "Aashu",
     "Gender": "male",
     "DateOfBirth": "1964-09-18",
     "KnownAs": "Aashu",
@@ -248,7 +248,7 @@
     ]
   },
   {
-    "UserName": "Hemant",
+    "Username": "Hemant",
     "Gender": "male",
     "DateOfBirth": "1987-04-19",
     "KnownAs": "Hemant",
@@ -267,7 +267,7 @@
     ]
   },
   {
-    "UserName": "Pratk",
+    "Username": "Pratk",
     "Gender": "male",
     "DateOfBirth": "1988-08-10",
     "KnownAs": "Pratik",

@@ -24,7 +24,7 @@ namespace API.Controllers
         [HttpPost("register")]
         public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
         {
-            if(await UserExists(registerDto.UserName))
+            if(await UserExists(registerDto.Username))
             {
                 return BadRequest("Username is taken");
             }
@@ -33,7 +33,7 @@ namespace API.Controllers
 
             var user = new AppUser
             {
-                UserName = registerDto.UserName.ToLower(),
+                Username = registerDto.Username.ToLower(),
                 PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password)),
                 PasswordSalt = hmac.Key
             };
@@ -43,7 +43,7 @@ namespace API.Controllers
 
             return new UserDto
             {
-                UserName = user.UserName,
+                Username = user.Username,
                 Token = _tokenService.CreateToken(user)
             };
         }
@@ -52,7 +52,7 @@ namespace API.Controllers
         [HttpPost("login")]
         public async Task<ActionResult<UserDto>> Login(LoginDto loginDto) 
         {
-            var user = await db.Users.SingleOrDefaultAsync(m => m.UserName == loginDto.UserName);
+            var user = await db.Users.SingleOrDefaultAsync(m => m.Username == loginDto.Username);
 
             if (user == null)
             {
@@ -73,7 +73,7 @@ namespace API.Controllers
 
             return new UserDto
             {
-                UserName = user.UserName,
+                Username = user.Username,
                 Token = _tokenService.CreateToken(user)
             };
         }
@@ -81,7 +81,7 @@ namespace API.Controllers
 
         private async Task<bool> UserExists(string username)
         {
-            return await db.Users.AnyAsync(m => m.UserName == username.ToLower());
+            return await db.Users.AnyAsync(m => m.Username == username.ToLower());
         }
     }
 }
