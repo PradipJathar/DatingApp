@@ -52,7 +52,8 @@ namespace API.Controllers
         [HttpPost("login")]
         public async Task<ActionResult<UserDto>> Login(LoginDto loginDto) 
         {
-            var user = await db.Users.SingleOrDefaultAsync(m => m.Username == loginDto.Username);
+            var user = await db.Users.Include(m => m.Photos)
+                                     .SingleOrDefaultAsync(m => m.Username == loginDto.Username);
 
             if (user == null)
             {
@@ -74,7 +75,8 @@ namespace API.Controllers
             return new UserDto
             {
                 Username = user.Username,
-                Token = _tokenService.CreateToken(user)
+                Token = _tokenService.CreateToken(user),
+                PhotoUrl = user.Photos.FirstOrDefault(m => m.IsMain)?.Url
             };
         }
         
