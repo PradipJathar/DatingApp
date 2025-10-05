@@ -23,6 +23,7 @@ namespace API.DTOs
         public string Country { get; set; }
 
         [Required]
+        [StringLength(8, MinimumLength = 4, ErrorMessage = "The field Password must be a string with a minimum length of 4 and a maximum length of 8.")]
         public string Password { get; set; }
     }
 }
