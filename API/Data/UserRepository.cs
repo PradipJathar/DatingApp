@@ -32,10 +32,12 @@ namespace API.Data
 
         public async Task<PagedList<MemberDto>> GetMembersAsync(UserParams userParams)
         {
-            var query = db.Users.ProjectTo<MemberDto>(_mapper.ConfigurationProvider)
-                                 .AsNoTracking();
+            var query = db.Users.AsQueryable();
+            query = query.Where(m => m.Username != userParams.CurrentUsername);
+            query = query.Where(m => m.Gender == userParams.Gender);
 
-            return await PagedList<MemberDto>.CreateAsync(query, userParams.PageNumber, userParams.PageSize);
+            return await PagedList<MemberDto>.CreateAsync(query.ProjectTo<MemberDto>(_mapper.ConfigurationProvider)
+                                 .AsNoTracking(), userParams.PageNumber, userParams.PageSize);
         }
 
         public async Task<AppUser> GetUserByIdAsync(int id)
