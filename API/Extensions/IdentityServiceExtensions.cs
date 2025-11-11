@@ -16,9 +16,9 @@ namespace API.Extensions
                 opt.Password.RequireNonAlphanumeric = false;
             })
                 .AddRoles<AppRole>()
-                .AddRoleManager<AppRole>()
-                .AddSignInManager<AppUser>()
-                .AddRoleValidator<AppRole>()
+                .AddRoleManager<RoleManager<AppRole>>()
+                .AddSignInManager<SignInManager<AppUser>>()
+                .AddRoleValidator<RoleValidator<AppRole>>()
                 .AddEntityFrameworkStores<DataContext>();
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

@@ -57,7 +57,7 @@ using (var scope = app.Services.CreateScope())
         var context = services.GetRequiredService<DataContext>();
         await context.Database.MigrateAsync(); // Apply any pending migrations
 
-        await Seed.SeedUsers(context); // Your seed method
+        // await Seed.SeedUsers(context); // Your seed method
     }
     catch (Exception ex)
     {
